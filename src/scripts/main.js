@@ -55,9 +55,9 @@ const secondPromise = new Promise((resolve) => {
   document.addEventListener('contextmenu', handleRightClick);
 });
 
-secondPromise.then((message) => {
-  notification('success', message);
-});
+secondPromise
+  .then((message) => notification('success', message))
+  .catch((message) => notification('error', message));
 
 const thirdPromise = new Promise((resolve) => {
   let leftClick = false;
@@ -91,6 +91,6 @@ const thirdPromise = new Promise((resolve) => {
   document.addEventListener('contextmenu', handleRightClick);
 });
 
-thirdPromise.then((message) => {
-  notification('success', message);
-});
+thirdPromise
+  .then((message) => notification('success', message))
+  .catch((message) => notification('error', message));
